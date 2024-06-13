@@ -14,5 +14,5 @@ console.log(jsuser["fullname"])
 jsuser.greeting=function(){
     console.log(`hello user,${this.fullname}`)
 }
-console.log(jsuser.greeting())
+jsuser.greeting()
 
