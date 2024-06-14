@@ -12,7 +12,6 @@ user["welcomemessage"]()
 console.log(this)
 function chai(){
     let username="sanjay"
-    console.log(this)
 }
 chai()
 //that means this cant be use to access property of function but can be used to access the property of current context
@@ -29,4 +28,15 @@ function add(num1,num2){
 }
 ar.forEach(add)
 console.log(sm);
+function outerFunction() {
+    function innerFunction() {
+        console.log('Inner function called!');
+    }
+
+    // Return the inner function
+    return innerFunction();
+}
+
+outerFunction();
+
 
