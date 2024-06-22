@@ -26,3 +26,26 @@ const todo= async function(){
 }
 
 todo().then((data)=>{console.log(data)}).catch((err)=>{console.log(err)})
+//error handling
+async function fetchData(url) {
+    try {
+        const response = await fetch(url);
+
+        // Check if the response status is not OK (status code 200-299)
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("Data received:", data);
+    } catch (error) {
+        console.error("An error occurred:", error.message);
+    } finally {
+        console.log("Fetch attempt finished.");
+    }
+}
+
+// Example usage
+const apiURL = "https://api.example.com/data";
+fetchData(apiURL);
+
